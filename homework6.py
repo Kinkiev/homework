@@ -92,7 +92,11 @@ def unpack_archive(path: Path) -> None:
         arh_dir = path.joinpath(path / archive_folder / filename)
         if not arh_dir.exists():  #ця конструкція якимось чином видаляє папки з архівом якщо вони вже там були і створює якщо їх немає. не знаю сам чому :)  а інакше якщо вже такі теки є то випадає помилка при повторному запуску скріпта
             arh_dir.mkdir()
-            shutil.unpack_archive(item, arh_dir)
+            try:
+                shutil.unpack_archive(item, arh_dir)
+                item.unlink()
+            except:
+                continue
         else:
             return "Other"
     
