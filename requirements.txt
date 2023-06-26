@@ -1,0 +1,7 @@
+build==0.10.0
+clean @ file:///Users/kinkiev/Desktop/homework/homework
+Faker==18.11.1
+packaging==23.1
+pyproject_hooks==1.0.0
+python-dateutil==2.8.2
+six==1.16.0
